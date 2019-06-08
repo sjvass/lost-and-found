@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <title>Lost and Found</title>
+        <!--stylesheet -->
+        <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/navbar.css">
+        <!--jQuery -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+    {% endblock %}
+</head>
+<body>
+
+<!--     <div id="navbar1"></div> -->
+
+    <div id="navbar">
+        <ul>
+            <li class="home">
+                <a href="/">
+                    Lost and Found
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Lost</a>
+                <div class="dropdown-content">
+                  <a href="/lost">View Lost Items</a>
+                  <a href="/report-lost">Report a Lost Item</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(1)" class="dropbtn">Found</a>
+                <div class="dropdown-content">
+                  <a href="/found">View Found Items</a>
+                  <a href="/report-found">Report a Found Item</a>
+                </div>
+            </li>
+            <li class="dropdown" style="float:right">
+                <a href="javascript:void(2)" class="dropbtn" style="text-align: right">Account</a>
+                <div class="account-content">
+                    {% if 'user_id' in session %}
+                        <a href="/user/{{ session['user_id'] }}">View Your Page</a>
+                        <a href="/signout">Sign Out</a>
+                    {% else %}
+                        <a href="/signin">Sign In</a>
+                        <a href="/register">Create an account</a>
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+    <!-- enable flashed messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div id="root"></div>
+
+
+    {% block content %}
+    {% endblock %}
+
+    {% block scripts %}
+        <!-- React scripts -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- babel -->
+    <script src="http://unpkg.com/babel-standalone"></script>
+    {% endblock %}
+
+<!--     <script src="/static/js/navbar.jsx" type="text/jsx"></script> -->
+    </div>
+
+</body>
+</html>
