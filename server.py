@@ -364,7 +364,7 @@ def report_lost():
     location = request.form.get('location')
     reward = request.form.get('reward')
 
-    if not reward:
+    if not reward or reward == 'undefined':
         reward = None
 
     geocoding_info = get_geocoding(location)
