@@ -1,14 +1,28 @@
 {% extends 'base.html' %}
-{#{% block content %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="/static/css/map-styles.css">
+{% endblock %}
 
-    <div id="root"></div>
 
-{% endblock %}#}
+{% block content %}
+    <div id="map"></div>
+{% endblock %}
+
 
 {% block scripts %}
     {{ super() }}
 
     <!-- react for this page-->
     <!-- need to host http server on port 5002 to server file -->
-    <script src="/static/js/homepage.jsx" type="text/jsx"></script>
+    <!-- <script src="/static/js/homepage.jsx" type="text/jsx"></script> -->
+
+    <!-- map setup -->
+    <script type="text/javascript" src="/static/js/homepage-map.js"></script>
+
+    <!-- google maps -->
+    <script
+        async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5ANDUHWBtXEFwGYWHtp8MTMyLvnUymWk&callback=initMap">
+    </script>
 {% endblock %}
