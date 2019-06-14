@@ -175,7 +175,8 @@ class Image(db.Model):
     def __repr__(self): 
         """ Provide helpful representation when printed """
 
-        return f"<Image img_id = {self.img_id} name = {self.img_name} found_id = {self.found_id} lost_id = {self.lost_id}>"
+        return "<Image img_id = {img_id} name = {img_name} found_id = {found_id} lost_id = {lost_id}>".format(img_id=self.img_id,
+         found_id=self.found_id, img_name=self.img_name, lost_id=self.lost_id)
 
 class Message(db.Model):
     """user messages"""
