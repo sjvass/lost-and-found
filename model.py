@@ -25,7 +25,7 @@ class User(db.Model):
     def __repr__(self): 
         """ Provide helpful representation when printed """
 
-        return f"<User user_id = {self.user_id} email = {self.email}>"
+        return "<User user_id = {} email = {}>".format(self.user_id, self.email)
 
     def to_dict(self):
         """returns a dictionary representation of the instance"""
