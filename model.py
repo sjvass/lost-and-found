@@ -209,11 +209,11 @@ class Message(db.Model):
     def __repr__(self):
         """Provide helpful representation when printed."""
 
-        return f"""<Message msg_id={self.msg_id}
-                   from_id={self.from_id}
-                   to_id={self.to_id}
-                   subject={self.subject}
-                   read={self.read}>"""
+        return ("<Message msg_id={msg_id}".format(msg_id=self.msg_id) +
+                   "from_id={from_id}".format(from_id=self.from_id) +
+                   "to_id={to_id}".format(to_id=self.to_id) +
+                   "subject={subject}".format(subject=self.subject) +
+                   "read={read}>".format(read=self.read))
 
     def to_dict(self):
         """converts Message object to dict"""
