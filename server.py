@@ -362,7 +362,9 @@ def report_lost():
     title = request.form.get('title')
     description = request.form.get('description')
     location = request.form.get('location')
-    reward = request.form.get('reward')
+    reward = float(request.form.get('reward'))
+
+    print(reward)
 
     if not reward or reward == 'undefined':
         reward = None
@@ -402,8 +404,8 @@ def report_lost():
     new_lost_id = new_lost.lost_id
 
     #if an image was uploaded, store it in the database
-    if 'picture' in request.files:
-        file = request.files['picture']
+    if 'file' in request.files:
+        file = request.files['file']
 
         img_name = 'l' + str(new_lost_id) + file.filename
 
@@ -424,6 +426,8 @@ def report_lost():
 def delete_lost():
     """deletes lost item from losts"""
     lost_id = request.json.get('lost_id')
+
+    Image.query.filter_by(lost_id=int(lost_id)).delete()
 
     Lost.query.filter_by(lost_id=int(lost_id)).delete()
     db.session.commit()
@@ -509,6 +513,9 @@ def report_found():
 
     if(request.form):
 
+        print(request.form)
+        print(request.files)
+
         title = request.form.get('title')
         description = request.form.get('description')
         location = request.form.get('location')
@@ -547,8 +554,8 @@ def report_found():
         new_found_id = new_found.found_id
 
         #if an image was uploaded, store it in the database
-        if 'picture' in request.files:
-            file = request.files['picture']
+        if 'file' in request.files:
+            file = request.files['file']
 
             img_name = 'f' + str(new_found_id) + file.filename
 
@@ -569,6 +576,8 @@ def report_found():
 def delete_found():
     """deletes a found item from the database"""
     found_id = request.json.get('found_id')
+
+    Image.query.filter_by(found_id=int(found_id)).delete()
 
     Found.query.filter_by(found_id=int(found_id)).delete()
     db.session.commit()
@@ -714,7 +723,7 @@ def get_geocoding(location):
     lat = results['geometry']['location']['lat']
     lng = results['geometry']['location']['lng']
 
-
+    #TODO: fix if no address, just title
     street_address, city, state_zip, country = address.split(', ')
     state, zipcode = state_zip.split(' ')
 

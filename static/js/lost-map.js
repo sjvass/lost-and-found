@@ -66,9 +66,9 @@ function initMap() {
                         ${lost.title}
                     </a>
                 </h3>
-                <ul class="found-info">
+                <ul class="lost-info">
                   <li><b>Description: </b>${lost.description}</li>
-                  <li><b>Found By: </b>
+                  <li><b>Lost By: </b>
                     <a href=${"/user/" + lost.user_id}>
                         ${lost.user_fname} ${lost.user_lname}
                     </a></li>

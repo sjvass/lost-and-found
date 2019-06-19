@@ -67,7 +67,7 @@ class FoundItem extends React.Component {
             }
         })
         .then(() => {
-            window.location.href = "/user" + this.state.curr_user;
+            window.location.href = "/user/" + this.state.curr_user;
         });
 
     }

@@ -142,6 +142,7 @@ class Lost(db.Model):
 
         lost_dict = {'lost_id': self.lost_id,
                       'user_id': self.user_id,
+                      'reward': self.reward,
                       'title': self.title,
                       'location_id': self.location_id,
                       'description': self.description,

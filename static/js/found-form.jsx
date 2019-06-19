@@ -77,7 +77,7 @@ class ReportFound extends React.Component {
                     <p>A more detailed description of the item. List any identifying 
                         marks or deials such as size, brand, color, pattern, damage, 
                         etc.</p>
-                    <input type="text" name="description" onChange={this.handleInputChange('description')} />
+                    <input type="text" id="description" name="description" onChange={this.handleInputChange('description')} />
                     <br/>
 
                     <br/>
