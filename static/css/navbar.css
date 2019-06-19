@@ -12,14 +12,22 @@
 
 .home a, .dropbtn {
   display: inline-block;
-  color: white;
+/*  color: white;*/
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
+.home a {
+  color: green;
+}
+
+.dropdown {
+  color: white;
+}
+
 .home a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #fff2af;
 }
 
 li.dropdown {
