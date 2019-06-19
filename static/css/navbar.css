@@ -3,7 +3,8 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #f9f9f9;
+  height: 20%;
 }
 
 #navbar li/*:not(.account)*/ {
@@ -16,14 +17,16 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: Arial;
+  font-weight: bold;
 }
 
 .home a {
-  color: green;
+  color: #57ad01;
 }
 
-.dropdown {
-  color: white;
+.dropbtn {
+  color: black;
 }
 
 .home a:hover, .dropdown:hover .dropbtn {
@@ -59,6 +62,7 @@ li.dropdown {
   text-decoration: none;
   display: block;
   text-align: left;
+  font-family: Arial;
 }
 
 .dropdown-content a:hover {background-color: #f1f1f1;}
