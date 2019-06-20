@@ -78,7 +78,7 @@ class ReportLost extends React.Component {
                     <p>A more detailed description of the item. List any identifying 
                         marks or deials such as size, brand, color, pattern, damage, 
                         etc.</p>
-                    <input type="text" id="description" name="description" onChange={this.handleInputChange('description')} />
+                    <textarea rows="5" cols="30" id="description" name="description" onChange={this.handleInputChange('description')} />
                     <br/>
 
                     <br/>

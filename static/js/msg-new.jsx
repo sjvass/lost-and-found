@@ -81,7 +81,7 @@ class NewMessage extends React.Component {
                             value={this.state.subject} onChange={this.handleSubjectChange} required/>
                         <br/>
 
-                        <input type="text" id="body" name="body" placeholder="Type your message here"
+                        <textarea rows="10" cols="40" id="body" name="body" placeholder="Type your message here"
                             onChange={this.handleBodyChange} required/>
                         <br/>
 

@@ -23,20 +23,38 @@
                 </a>
             </li>
             <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Lost</a>
+                <a href="/lost" class="dropbtn">Lost</a>
                 <div class="dropdown-content">
                   <a href="/lost">View Lost Items</a>
                   <a href="/report-lost">Report a Lost Item</a>
                 </div>
             </li>
             <li class="dropdown">
-                <a href="javascript:void(1)" class="dropbtn">Found</a>
+                <a href="/found" class="dropbtn">Found</a>
                 <div class="dropdown-content">
                   <a href="/found">View Found Items</a>
                   <a href="/report-found">Report a Found Item</a>
                 </div>
             </li>
-            <li class="dropdown" style="float:right">
+            {% if 'user_id' in session %}
+                <li style="float:right;">
+                    <a href="/signout" class="dropbtn" >Sign Out</a>
+                </li>
+                <li style="float:right;">
+                    <a href="/user/{{ session['user_id'] }}" class="dropbtn"> Account </a>
+                </li>
+            {% else %}
+                <li style="float:right;">
+                    <a href="/register" class="dropbtn" >Create Account</a>
+                </li>
+                <li style="float:right;">
+                    <a href="/signin" class="dropbtn" >Sign In</a>
+                </li>
+            {% endif %}
+
+
+
+<!--             <li class="dropdown" style="float:right;">
                 <a href="javascript:void(2)" class="dropbtn" style="text-align: right">Account</a>
                 <div class="account-content">
                     {% if 'user_id' in session %}
@@ -47,7 +65,7 @@
                         <a href="/register">Create an account</a>
                     {% endif %}
                 </div>
-            </li>
+            </li> -->
         </ul>
     </div>
     <div class="container">

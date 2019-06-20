@@ -29,7 +29,7 @@
   color: black;
 }
 
-.home a:hover, .dropdown:hover .dropbtn {
+.home a:hover, .dropdown:hover, .dropbtn:hover {
   background-color: #fff2af;
 }
 
