@@ -30,20 +30,18 @@ class LostItems extends React.Component {
 
             //convert losts to html
             const lostLst = this.state.losts.map((lost) =>
-                <li key={lost.lost_id}>
-                    <a href={"/lost/" + lost.lost_id}>
+                <a href={"/lost/" + lost.lost_id}>
+                    <li key={lost.lost_id}>
                         {lost.title}
-                    </a>
-                </li>
+                    </li>
+                </a>
             );
 
             //html
             return(
                 <div id="LostItems">
                     <h2>Lost Items</h2>
-                    <ul>
-                        {lostLst}
-                    </ul>
+                    {lostLst}
                 </div>
             )
 

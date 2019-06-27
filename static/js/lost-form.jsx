@@ -89,7 +89,7 @@ class ReportLost extends React.Component {
 
                     <br/>
                     <label><strong>Location</strong></label>
-                    <p>Enter the place or adress where you lost the item</p>
+                    <p>Enter the place or address where you lost the item</p>
                     <input type="text" name="location" required onChange={this.handleInputChange('location')} />
                     <br/>
 

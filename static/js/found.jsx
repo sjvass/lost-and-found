@@ -30,20 +30,18 @@ class FoundItems extends React.Component {
 
             //convert founds to html
             const foundLst = this.state.founds.map((found) =>
-                <li key={found.found_id}>
-                    <a href={"/found/" + found.found_id}>
+                <a href={"/found/" + found.found_id}>
+                    <li key={found.found_id}>
                         {found.title}
-                    </a>
-                </li>
+                    </li>
+                </a>
             );
 
             //html
             return(
                 <div id="foundItems">
                     <h2>Found Items</h2>
-                    <ul>
-                        {foundLst}
-                    </ul>
+                    {foundLst}
                 </div>
             )
 
