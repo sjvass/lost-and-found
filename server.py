@@ -362,7 +362,7 @@ def report_lost():
     title = request.form.get('title')
     description = request.form.get('description')
     location = request.form.get('location')
-    reward = float(request.form.get('reward'))
+    reward = request.form.get('reward')
 
     print(reward)
 
@@ -712,6 +712,8 @@ def get_geocoding(location):
     response = requests.get(url)
 
     data = response.json()
+
+    print(data)
 
     results = data['results'][0]
 
